@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YSOFT</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="logo.png" />
+            <h2>Y<span class="danger">SOFT</span></h2>
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+          <a href="#" onclick="showSection('anasayfa')" class="active">
+            <span class="material-icons-sharp">grid_view</span>
+            <h3>Anasayfa</h3>
+          </a>
+          <a href="#" onclick="showSection('calisanlar')">
+            <span class="material-icons-sharp">person</span>
+            <h3>Çalışanlar</h3>
+          </a>
+          <a href="#" onclick="showSection('projeler')">
+            <span class="material-icons-sharp">work</span>
+            <h3>Projeler</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Çıkış</h3>
+          </a>
+        </div>
+      </aside>
+      <!----------------------------END OF ASIDE---------->
+
+      <!-- Anasayfa -->
+      <main id="anasayfa">
+        <h1>Anasayfa</h1>
+        <div class="insights">
+          <div class="sales">
+            <span class="material-icons-sharp">analytics</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Devam Eden Proje</h3>
+                <h1>120</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>%81</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Son 24 Saat</small>
+          </div>
+
+          <div class="active_employee">
+            <span class="material-icons-sharp">bar_chart</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Aktif Çalışan Sayısı</h3>
+                <h1>400</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>%71</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Son 24 Saat</small>
+          </div>
+
+          <div class="waiting_employee">
+            <span class="material-icons-sharp">bar_chart</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Proje Bekleyen Çalışan</h3>
+                <h1>50</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>%25</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Son 24 Saat</small>
+          </div>
+        </div>
+      </main>
+
+      <!-- Çalışanlar -->
+      <main id="calisanlar">
+        <div class="head-title">
+          <div class="left">
+            <h1>Çalışan Yönetimi</h1>
+          </div>
+        </div>
+
+        <div class="table-data">
+          <div class="order">
+            <div class="head">
+              <h3>Çalışanlar</h3>
+              <button id="add-employee-btn" class="btn-employee-project">
+                + Yeni Çalışan
+              </button>
+            </div>
+            <table id="employees-table">
+              <thead>
+                <tr>
+                  <th>Çalışan Adı</th>
+                  <th>Pozisyon</th>
+                  <th>Proje</th>
+                  <th>Aksiyon</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Çalışanlar buraya eklenecek -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Çalışan Ekleme Formu -->
+          <div
+            class="add-employee"
+            id="add-employee-form"
+            style="display: none"
+          >
+            <h3>Yeni Çalışan Ekle</h3>
+            <form id="employee-form">
+              <label for="employee-name">Çalışan Adı ve Soyadı:</label>
+              <input
+                type="text"
+                id="employee-name"
+                placeholder="Çalışan Adı Girin"
+                required
+              />
+
+              <label for="position">Pozisyon:</label>
+              <input
+                type="text"
+                id="position"
+                placeholder="Pozisyon Girin"
+                required
+              />
+
+              <label for="project">Proje:</label>
+              <select id="project">
+                <option value="Atanmadı">Atanmadı</option>
+                <option value="Proje A">Proje A</option>
+                <option value="Proje B">Proje B</option>
+                <option value="Proje C">Proje C</option>
+              </select>
+
+              <button type="submit" id="save-employee-btn">Kaydet</button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+      <!-- Projeler -->
+      <main id="projeler">
+        <div class="head-title">
+          <div class="left">
+            <h1>Proje Yönetimi</h1>
+          </div>
+        </div>
+
+        <div class="table-data">
+          <div class="order">
+            <div class="head">
+              <h3>Projeler</h3>
+              <button id="add-project-btn" class="btn-employee-project">
+                + Yeni Çalışan Ata
+              </button>
+            </div>
+            <table id="projects-table">
+              <thead>
+                <tr>
+                  <th>Proje Adı</th>
+                  <th>Maksimum Çalışan Sayısı</th>
+                  <th>Minimum Çalışan Sayısı</th>
+                  <th>Başlangıç Tarihi</th>
+                  <th>Çalışanlar</th>
+                  <th>Aksiyon</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Mevcut projeler burada listelenecek -->
+                <tr>
+                  <td>Proje A</td>
+                  <td>9</td>
+                  <td>3</td>
+                  <td>01-01-2023</td>
+                  <td>
+                    <div class="employee-list">
+                      <span>Ahmet Yılmaz</span>
+                      <span>Zeynep Kara</span>
+                    </div>
+                  </td>
+                  <td>
+                    <button class="delete-btn">Sil</button>
+                  </td>
+                </tr>
+                <!-- Daha fazla proje buraya eklenebilir -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Proje Ekleme Formu -->
+          <div class="add-project" id="add-project-form" style="display: none">
+            <h3>Yeni Çalışan Ata</h3>
+            <form id="project-form">
+              <label for="select-project">Proje Seç:</label>
+              <select id="select-project">
+                <option value="Proje A">Proje A</option>
+                <option value="Proje B">Proje B</option>
+                <option value="Proje C">Proje C</option>
+              </select>
+
+              <label for="employees">Çalışanlar:</label>
+              <select id="employees" multiple>
+                <option value="Ahmet Yılmaz">Ahmet Yılmaz</option>
+                <option value="Zeynep Kara">Zeynep Kara</option>
+                <option value="Mehmet Yılmaz">Mehmet Yılmaz</option>
+              </select>
+
+              <button type="submit" id="save-project-btn">Kaydet</button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+      <div class="right">
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp">menu</span>
+          </button>
+          <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+          </div>
+          <div class="profile">
+            <div class="info">
+              <p>Merhaba, <b>Hoşgeldin</b></p>
+            </div>
+            <div class="profile-photo">
+              <img src="./image.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
